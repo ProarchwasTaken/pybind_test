@@ -27,10 +27,6 @@ After some angry searching one the internet I figured out one way I could
 fix the issue. It was thanks to this thread in the pybind repo:
 https://github.com/pybind/pybind11/issues/2010
 
-I also saved the html just in case the thread gets taken down for whatever
-reason. It's very messaged up, but there is enough details that you'll
-be able to understand it.
-
 Judging from the thread, apparently the error means that some DLLs which
 my pybind module needs are missing, and the way I could fix it is add
 the path to the DLLs that my module was missing.
