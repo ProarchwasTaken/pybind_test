@@ -6,4 +6,4 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_subdirectory(".extern/pybind11")
 
 pybind11_add_module("test_module" main.cpp)
-target_compile_options("test_module" PRIVATE "-static-libgcc" "-static-libstdc++")
+target_compile_options("test_module" PRIVATE "-static" "-static-libgcc" "-static-libstdc++")
