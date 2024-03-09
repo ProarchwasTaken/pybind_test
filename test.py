@@ -1,12 +1,10 @@
-import os
+from tld_module import sayHello
 
 
-def main():
-    from tld_module import sayHello
-    
+def main():  
     sayHello()
 
 
 if __name__ == "__main__":
-    os.add_dll_directory("C:/msys64/mingw64/bin")
     main()
+
