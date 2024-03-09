@@ -70,3 +70,23 @@ Like I said, I'm frustrated that I seem to be the one of the only people
 who seem to be having this issue. Hopefully uploading this project to 
 github would help people get a better look and figure out a solution.
 I hope you guys have a good day.
+
+# The True Solution!!!
+Ladies and Gentlemen, as of March 8th, 2024 at 10:21 PM EST, I've finally 
+found the solution to the problem! I'm gonna document it here so others
+could find the solution as well.
+
+Apparently, the DLL file that the module needs was "libwinpthread-1.dll".
+Once I knew that, all I had to do is statically link it in the cmake file.
+Although, just to be safe, you may want to also link "static-libgcc" and
+"static-libstdc++".
+
+```
+target_link_libraries("test_module" PRIVATE -static -lpthread -static-libgcc -static-libstdc++)
+```
+
+Once I did that, and compiled the module file, I was able to import the
+module without needing to use "os.add_dll_directory"! Finally I could move
+on to something else!
+
+
